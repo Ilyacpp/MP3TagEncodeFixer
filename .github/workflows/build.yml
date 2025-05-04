@@ -11,7 +11,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
+        python-version: '3.x'  # Автоматически выбирает последнюю версию
     
     - name: Install dependencies
       run: |
@@ -20,19 +20,6 @@ jobs:
     - name: Build app
       run: |
         pyinstaller --onefile --windowed --name MP3TagEncodeFixer --target-arch universal2 MP3TagEncodeFixer.py
-    
-    - name: Self-sign app
-      run: |
-        codesign --force --deep --sign - dist/MP3TagEncodeFixer.app
-    
-    - name: Remove quarantine
-      run: |
-        xattr -dr com.apple.quarantine dist/MP3TagEncodeFixer.app
-        xattr -lr dist/MP3TagEncodeFixer.app
-    
-    - name: Verify app
-      run: |
-        spctl --assess -vv dist/MP3TagEncodeFixer.app
     
     - name: Create DMG
       run: |
