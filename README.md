@@ -15,7 +15,7 @@ This fixer will help to massively convert latin1 tags that erroneously store str
 
 ## Download
 
-Get the latest version from [Releases page](https://github.com/yourusername/MP3TagEncodeFixer/releases)
+Get the latest version from [Releases page](https://github.com/Ilyacpp/MP3TagEncodeFixer/releases)
 
 ## Installation
 
