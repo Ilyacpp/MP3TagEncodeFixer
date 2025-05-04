@@ -21,6 +21,10 @@ jobs:
       run: |
         pyinstaller --onefile --windowed --name MP3TagEncodeFixer --target-arch universal2 MP3TagEncodeFixer.py
     
+    - name: Remove quarantine
+      run: |
+        xattr -dr com.apple.quarantine dist/MP3TagEncodeFixer.app
+    
     - name: Create DMG
       run: |
         brew install create-dmg
