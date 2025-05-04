@@ -26,7 +26,7 @@ jobs:
         brew install create-dmg
         create-dmg --volname "MP3TagEncodeFixer" MP3TagEncodeFixer.dmg dist/MP3TagEncodeFixer.app
     
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: MP3TagEncodeFixer
         path: MP3TagEncodeFixer.dmg
